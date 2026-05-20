@@ -87,7 +87,7 @@ ${RED}Proceed only if you know what you are doing.${NC}
 Requirements:
 1) This machine needs access to the internet to validate your certificate request.
 2) You will subsequently need credentials to access the servers you want to deploy certificates on.
-3) It will as first stept request a certificate for this server itself.
+3) It will as first stept request a certificate for this server itself to offer the management web interface.
 EOF
 
 while true; do
