@@ -76,16 +76,18 @@ If you want to introduce support for an additional provider visit our repository
 https://github.com/propstat/ssldeploy
 EOF
 cat << EOF
+
 ${RED}==========================================${NC}
 ${RED}WARNING${NC}
 ${RED}==========================================${NC}
-${RED}At the end of this process, this machine will hold credentials that allow to modify your DNS zone files. This server should not be accessible from the public.${NC}
+${RED}At the end of this process, this machine will hold credentials that allow to modify your DNS zone files. This system is meant for management networks and not for public access.${NC}
 ${RED}The software is provided "as is," meaning the original authors are not liable for any damages or bugs.${NC}
 ${RED}Proceed only if you know what you are doing.${NC}
 
 Requirements:
 1) This machine needs access to the internet to validate your certificate request.
 2) You will subsequently need credentials to access the servers you want to deploy certificates on.
+3) It will as first stept request a certificate for this server itself.
 EOF
 
 while true; do
