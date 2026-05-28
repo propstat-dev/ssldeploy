@@ -1,3 +1,7 @@
+#!/bin/sh
+# confirm_continue — POSIX shell confirmation prompt
+# Source this file: . ./confirm_continue.sh
+
 confirm_continue() {
     _default=y _quiet=0 _timeout=
     _msg_start=""
@@ -50,7 +54,7 @@ confirm_continue() {
     }
     trap _cc_restore EXIT INT TERM
 
-    # Print start message, then complete yes-path and print end message
+    # Print msg_yes, run on_yes callback, then print endmsg
     _cc_yes() {
         _cc_respond "$_msg_y" "$_on_y" 0; _rc=$?
         printf '%s\n' "$_msg_end" >&2
