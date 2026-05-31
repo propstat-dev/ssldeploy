@@ -1,0 +1,290 @@
+#!/bin/sh
+# ==========================================
+# Variables
+# ==========================================
+RED=$'\e[0;31m'
+RHEL_REQ_VERSION_ID="10"
+RHEL_REQ_VERSION_CODENAME="Coughlan"
+UBUNTU_REQ_VERSION_ID="26.04"
+UBUNTU__REQ_VERSION_CODENAME="Resolute Raccoon"
+DEBIAN_REQ_VERSION_ID="13"
+DEBIAN_REQ_VERSION_CODENAME="TRIXIE"
+ID="undefined"
+VERSION_ID="undefined"
+
+
+# ==========================================
+# LOGO
+# ==========================================
+cat << "EOF"
+
+           il*%%%%*             i%%%%%%%           
+          iiiI*%%%%%           iii*%%%%*%          
+         iiiiii%%%%%%         iiiii%*%%%*%         
+        iiiiiii %%%%%%       iiiiii %*%%%%%        
+       iiiiiii   *%%%%%%   iiiiiii   **%%%%*       
+      iiiiiii     *%%%%%% iiiiiii     %*%%%%*      
+     iiiiiii       **%%%**iiiiii       *%%%%*%     
+    iiiiiii         *%%%%*<iiii         **%%%**    
+   iiiiiii           %*%%%**ii           *%%%%*%   
+  iiiiiiiiiiiiiiiiiiii%%%%%%*%%%%%%%%%%%%%%%%%%%*  
+ iiiiiiiiiiiiiiiiiiiiii%*%%%%%%%%%%%%%%%%%%%%%%%%* 
+iiiiiiiiiiiiiiiiiiiiiiii**%%%%%%%%%%%%%%%%%%%%%%%%%
+                                                   
+iiiii  iiiiii iiiiii  iiiii  iiiiii iiiiii  iii  iiiiii
+ii  ii ii  ii ii  ii  ii  ii  ii     ii    ii ii   ii  
+iiiii  iiiiii ii  ii  iiiii     ii   ii   iiiiiii  ii  
+ii     ii  ii iiiiii  ii     iiiiii  ii   ii   ii  ii  
+
+EOF
+
+# ==========================================
+# Copyright & License Warning
+# ==========================================
+
+date +"Copyright 2026 - YYYY by Propstat"
+echo "Non commercial use is free of charge, please consult our license for commercial use."
+echo "The license is available at https://github.com/propstat/ssldeploy"
+
+# ==========================================
+# Accept License
+# ==========================================
+
+while true; do
+    echo "Do you accept the license?"
+    echo "Type Y(es) to continue or N(o) to abort."
+    read -p "#? " reply
+
+    case $reply in
+        1 | Yes | yes | y | Y ) 
+            make install
+            break
+            ;;
+        2 | No | no | n | N ) 
+            echo "Installation aborted."
+            exit 0
+            ;;
+        * ) 
+            echo "Invalid option. Please try again."
+            echo ""
+            ;;
+    esac
+done
+
+# ==========================================
+# Introduction and Warning
+# ==========================================
+
+cat << "EOF"
+This tool allows you to request and deploy Let’s Encrypt™ Certificates among your services.
+
+Currently following DNS providers are supported:
+- Cloudflare
+
+If you want to introduce support for an additional provider visit our repository at
+https://github.com/propstat/ssldeploy
+EOF
+cat << EOF
+
+${RED}==========================================${NC}
+${RED}WARNING${NC}
+${RED}==========================================${NC}
+${RED}At the end of this process, this machine will hold credentials that allow to modify your DNS zone files. This system is meant for management networks and not for public access.${NC}
+${RED}The software is provided "as is," meaning the original authors are not liable for any damages or bugs.${NC}
+${RED}Proceed only if you know what you are doing.${NC}
+
+Requirements:
+1) This machine needs access to the internet to validate your certificate request.
+2) You local DNS server 
+2) You will subsequently need credentials to access the servers you want to deploy certificates on.
+3) It will as first stept request a certificate for this server itself to offer the management web interface.
+EOF
+
+while true; do
+    echo "Do you understand the risks and want to proceed?"
+    echo "Type Y to continue or N to cancel the install."
+    read -p "#? " reply
+
+    case $reply in
+        1 | Yes | yes | y | Y ) 
+            make install
+            break
+            ;;
+        2 | No | no | n | N ) 
+            echo "Installation aborted."
+            exit 0
+            ;;
+        * ) 
+            echo "Invalid option. Please try again."
+            echo ""
+            ;;
+    esac
+done
+
+# ==========================================
+# Choice of O/S and Package Manager to install requirements
+# ==========================================
+
+cat << "EOF"
+The script supports following operating systems: 
+RHEL 
+Ubuntu 26.04 LTS
+Debian 10 Extended Update Support (EUS)
+
+Other O/S might work, but are not actively supported.
+If you decide to use a different O/S, please install the application directly from source. 
+EOF
+
+# Overwrite current distro variables
+# Load os-release
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+elif [ -f /usr/lib/os-release ]; then
+    . /usr/lib/os-release
+else
+    echo "ERROR: os-release not found"
+    exit 1
+fi
+
+distro="$ID"
+distro_version="$VERSION_ID"
+
+echo "Detected: $distro $distro_version"
+
+# Version comparison helper (uses sort -V for portability)
+ver_ge() {
+    # returns 0 if $1 >= $2
+    [ "$(printf '%s\n%s\n' "$2" "$1" | sort -V | head -n1)" = "$2" ]
+}
+
+case "$distro" in
+    rhel)
+        req="$RHEL_REQ_VERSION_ID"
+        ;;
+    ubuntu)
+        req="$UBUNTU_REQ_VERSION_ID"
+        ;;
+    debian)
+        req="$DEBIAN_REQ_VERSION_ID"
+        ;;
+    *)
+        echo "ERROR: Unsupported distro: $distro"
+        exit 1
+        ;;
+esac
+
+if ! ver_ge "$distro_version" "$req"; then
+    echo "ERROR: $distro requires version >= $req (found $distro_version)"
+    exit 1
+fi
+
+echo "Version requirement satisfied"
+
+# ==========================================
+# Boolean Continue Script
+# ==========================================
+
+confirm_continue() {
+    default="y"
+    quiet=0
+    timeout=""
+
+    msg_yes="Continuing..."
+    msg_no="Aborted."
+    msg_timeout="Timeout reached. Aborting."
+    msg_invalid="Invalid option. Please try again."
+
+    # parse args (POSIX-safe)
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            -q|--quiet)
+                quiet=1
+                ;;
+            -y|--yes)
+                default="y"
+                ;;
+            -n|--no)
+                default="n"
+                ;;
+            -t|--timeout)
+                shift
+                timeout="$1"
+                ;;
+            msg_yes=*) msg_yes=${1#msg_yes=} ;;
+            msg_no=*) msg_no=${1#msg_no=} ;;
+            msg_timeout=*) msg_timeout=${1#msg_timeout=} ;;
+            msg_invalid=*) msg_invalid=${1#msg_invalid=} ;;
+            *)
+                ;;
+        esac
+        shift
+    done
+
+    # quiet mode
+    if [ "$quiet" -eq 1 ]; then
+        printf "%s\n" "$msg_yes" >&2
+        return 0
+    fi
+
+    # apt/dnf-style prompt
+    if [ "$default" = "y" ]; then
+        prompt="Proceed? [Y/n]: "
+    else
+        prompt="Proceed? [y/N]: "
+    fi
+
+    while :; do
+        printf "%s" "$prompt" >&2
+        ans=""
+
+        # timeout version
+        if [ -n "$timeout" ]; then
+            tmp="/tmp/.confirm_ans_$$"
+
+            (
+                IFS= read -r ans < /dev/tty
+                printf "%s" "$ans" > "$tmp"
+            ) &
+            pid=$!
+
+            i=0
+            while [ "$i" -lt "$timeout" ]; do
+                [ -f "$tmp" ] && break
+                sleep 1
+                i=$((i + 1))
+            done
+
+            if [ ! -f "$tmp" ]; then
+                kill "$pid" 2>/dev/null
+                rm -f "$tmp"
+                printf "\n%s\n" "$msg_timeout" >&2
+                return 1
+            fi
+
+            wait "$pid" 2>/dev/null
+            ans=$(cat "$tmp")
+            rm -f "$tmp"
+        else
+            IFS= read -r ans < /dev/tty
+        fi
+
+        # default handling
+        if [ -z "$ans" ]; then
+            ans="$default"
+        fi
+
+        case "$ans" in
+            y|Y|yes|YES|Yes)
+                printf "%s\n" "$msg_yes" >&2
+                return 0
+                ;;
+            n|N|no|NO|No)
+                printf "%s\n" "$msg_no" >&2
+                return 1
+                ;;
+            *)
+                printf "%s\n" "$msg_invalid" >&2
+                ;;
+        esac
+    done
+}
