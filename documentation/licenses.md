@@ -29,6 +29,9 @@ This software contains several components that are licensed at different terms t
 | python-dotenv     | 1.2.2       | BSD-3-Clause               |
 | typing_extensions | 4.15.0      | PSF-2.0                    |
 
+# Visual Arts
+Where not indicated otherwise, the images have been created synthetically and released without any rights reserved.
+
 # Full Licenses Including Non-Python Components
 
 ## Authlib
@@ -218,7 +221,7 @@ SOFTWARE.
 2. (Tailwind CSS Cli)[https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.0]
 3. (Hero Icons)[https://github.com/tailwindlabs/heroicons]
 
-### License for Tailwind
+### License for Tailwind Components
 MIT License
 
 Copyright (c) Tailwind Labs, Inc.
