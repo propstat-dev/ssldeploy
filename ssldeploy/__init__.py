@@ -2,14 +2,16 @@ import os
 import subprocess
 import threading
 from flask import Flask
+from config import Config
 
 ssldeploy = Flask(__name__)
+ssldeploy.config.from_object(Config)
 
 def run_tailwind():
     subprocess.run([
-        "./tools/tailwindcss",
-        "-i", "./src/input.css",
-        "-o", "./static/css/output.css",
+        "./tools/tailwind/tailwindcss-macos-arm64-v430",
+        "-i", "./tools/tailwind/input.css",
+        "-o", "./static/css/ssldeploy.css",
         "--watch"
     ])
 
