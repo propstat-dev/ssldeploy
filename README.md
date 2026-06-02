@@ -4,14 +4,21 @@ A flask based web interface to deploy let's encrypt certificates to various serv
 ## Introduction
 **Let's encrypt** and **certbot** have dramatically improved the availability of certificates. Unfortunately, DNS authentication is today one of he leading means of distributing the certificates, frequently at the expense of a good security strategy. **ssldeploy** allows you to centralize the DNS authentication, certificate creation and deployment of your SSL certificates in a safe part of your network, distant from the edge. 
 
-# How do I run this
+## Features
+1. Certificate creation via Certbot and Certbot DNS
+2. Deployment of certificates to taget systems
+3. Certificate Check on target
+4. Self Servicing and Approval Processes for Certificates
+5. Single Sign-On Supported for Google and Microsoft with Group Level Privilege Assignment
 
-## Installation
+## How do I run this
+
+### Installation
 1. Copy the repo
 2. Launch the Installation script
 3. Launch the production server via `gunicorn -w 4 'ssldeploy:ssldeploy'`
 
-## Development & Debug Mode
+### Development & Debug Mode
 1. Navigate to the folder.
 2. Activate venv with `source venv/bin/activate`.
 3. Define the python.py as `FLASK_APP by export FLASK_APP=ssldeploy.py`.
