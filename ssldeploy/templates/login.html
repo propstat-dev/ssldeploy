@@ -1,0 +1,18 @@
+<html>
+    <!--Start login.html Head Section-->
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/ssldeploy.css') }}">
+        {% if brand %}
+        <title>{{ brand.brandname }} {{ title }} | SSL Deploy</title>
+        {% else %}
+        <title>SSLDeploy Log-In</title>
+        {% endif %}
+    </head>
+    <!--END login.html Head Section-->
+    <body>
+        <!--Start Login Component-->
+        {% block userLogin %}{% endblock %}
+        {% block adminLogin %}{% endblock %}
+        <!--END Login Component-->
+    </body>
+</html>

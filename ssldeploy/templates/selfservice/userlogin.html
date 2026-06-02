@@ -1,13 +1,6 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/ssldeploy.css') }}">
-        {% if brand %}
-        <title>{{ brand.brandname }} - {{ title }}</title>
-        {% else %}
-        <title>SSL Self Servicing Log-In</title>
-        {% endif %}
-    </head>
-    <body>
+{% extends "login.html" %}
+    {% block userLogin %}
+    <!--Start User Login Component-->
         <!--
         This example requires updating your template:
 
@@ -29,7 +22,7 @@
                 {% endif %}
                 <p class="mt-2 text-sm/6 text-gray-500 dark:text-gray-400">
                 Looking for the Admin Panel?
-                <a href="/admin/" class="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">Go to Admin Panel</a>
+                <a href="/admin" class="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300">Go to Admin Panel</a>
                 </p>
             </div>
 
@@ -111,6 +104,5 @@
             <img src="{{ url_for('static', filename= 'images/login/ssl-deploy-login-hero.webp') }}" alt="" class="absolute inset-0 size-full object-cover" />
         </div>
         </div>
-
-    </body>
-</html>
+    <!--END User Login Component-->
+    {% endblock %}
