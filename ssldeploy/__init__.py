@@ -11,7 +11,7 @@ def run_tailwind():
     subprocess.run([
         "./tools/tailwind/tailwindcss-macos-arm64-v430",
         "-i", "./tools/tailwind/input.css",
-        "-o", "./static/css/ssldeploy.css",
+        "-o", "./ssldeploy/static/css/ssldeploy.css",
         "--watch"
     ])
 
