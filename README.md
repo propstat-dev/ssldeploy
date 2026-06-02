@@ -9,14 +9,14 @@ A flask based web interface to deploy let's encrypt certificates to various serv
 ## Installation
 1. Copy the repo
 2. Launch the Installation script
-3. Launch the production server via 'gunicorn -w 4 \'ssldeploy:ssldeploy\''
+3. Launch the production server via `gunicorn -w 4 'ssldeploy:ssldeploy'`
 
 ## Development & Debug Mode
 1. Navigate to the folder.
-2. Activate venv with 'source venv/bin/activate'.
-3. Define the python.py as 'FLASK_APP by export FLASK_APP=ssldeploy.py'  
-4. 'flask run' will run on your localhost at the default python port (usually http://127.0.0.1:5000/).
-5. If you have made modifications to css and templates run './tools/tailwind/tailwindcss-macos-arm64-v430 -i ./tools/tailwind/input.css -o ./static/css/ssldeploy.css --watch'
+2. Activate venv with `source venv/bin/activate`.
+3. Define the python.py as `FLASK_APP by export FLASK_APP=ssldeploy.py`.
+4. `flask run` will run on your localhost at the default python port (usually http://127.0.0.1:5000/).
+5. If you have made modifications to css and templates run `./tools/tailwind/tailwindcss-macos-arm64-v430 -i ./tools/tailwind/input.css -o ./static/css/ssldeploy.css --watch`
 
 ## Why is this better than the alternatives?
 
