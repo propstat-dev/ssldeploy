@@ -3,8 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@source "../ssldeploy/templates/**/*.html";
-@source "../ssldeploy/**/*.py";
+@source "../../ssldeploy/templates/**/*.html";
+@source "../../ssldeploy/**/*.py";
+
+/* Basic UI Elements */
+
+.anchorlink {
+    @apply font-semibold text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 ;
+}
+
+/* Log-In Forms */
 
 .loginformfieldemail {
     @apply block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-sky-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-sky-500 mb-2 ;
