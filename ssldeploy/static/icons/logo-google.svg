@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="size-5 fill-[#24292F] dark:fill-white">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" fill="currentColor" aria-hidden="true" class="size-5 fill-[#24292F] dark:fill-white">
   <path fill="#f3f3f3" d="M 43.393 21.301 L 43.393 -1.699 L 43.393 21.301 Z" style="stroke-width: 1;"/>
   <g style="" transform="matrix(0.831606, 0, 0, 0.831587, 0.002189, 0.001853)">
     <path d="M 12.274 4.761 C 14.082 4.761 15.701 5.371 16.979 6.561 L 20.478 3.136 C 18.353 1.201 15.579 0.011 12.274 0.011 C 7.482 0.011 3.339 2.701 1.321 6.621 L 5.397 9.716 C 6.363 6.871 9.076 4.761 12.274 4.761 Z" fill="#EA4335" style="stroke-width: 1;"/>
