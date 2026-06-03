@@ -2,8 +2,7 @@ from flask import render_template, flash, redirect
 from ssldeploy import ssldeploy
 from ssldeploy.forms import UserLoginForm
 
-@ssldeploy.route('/')
-@ssldeploy.route('/index')
+@ssldeploy.route('/', methods=['GET', 'POST'])
 def index():
     brand = {'brandname' : 'companyname'}
     form = UserLoginForm()
