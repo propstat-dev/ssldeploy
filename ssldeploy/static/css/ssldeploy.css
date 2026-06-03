@@ -3390,7 +3390,7 @@
     outline-offset: calc(2px * -1);
   }
   &:focus {
-    outline-color: var(--color-indigo-600);
+    outline-color: var(--color-sky-600);
   }
   @media (width >= 40rem) {
     font-size: var(--text-sm);
@@ -3418,7 +3418,7 @@
   }
   @media (prefers-color-scheme: dark) {
     &:focus {
-      outline-color: var(--color-indigo-500);
+      outline-color: var(--color-sky-500);
     }
   }
 }
@@ -3448,7 +3448,7 @@
     outline-offset: calc(2px * -1);
   }
   &:focus {
-    outline-color: var(--color-indigo-600);
+    outline-color: var(--color-sky-600);
   }
   @media (width >= 40rem) {
     font-size: var(--text-sm);
@@ -3476,7 +3476,7 @@
   }
   @media (prefers-color-scheme: dark) {
     &:focus {
-      outline-color: var(--color-indigo-500);
+      outline-color: var(--color-sky-500);
     }
   }
 }
@@ -3490,16 +3490,16 @@
   border-color: var(--color-gray-300);
   background-color: var(--color-white);
   &:checked {
-    border-color: var(--color-indigo-600);
+    border-color: var(--color-sky-600);
   }
   &:checked {
-    background-color: var(--color-indigo-600);
+    background-color: var(--color-sky-600);
   }
   &:indeterminate {
-    border-color: var(--color-indigo-600);
+    border-color: var(--color-sky-600);
   }
   &:indeterminate {
-    background-color: var(--color-indigo-600);
+    background-color: var(--color-sky-600);
   }
   &:focus-visible {
     outline-style: var(--tw-outline-style);
@@ -3509,7 +3509,7 @@
     outline-offset: 2px;
   }
   &:focus-visible {
-    outline-color: var(--color-indigo-600);
+    outline-color: var(--color-sky-600);
   }
   &:disabled {
     border-color: var(--color-gray-300);
@@ -3536,27 +3536,27 @@
   }
   @media (prefers-color-scheme: dark) {
     &:checked {
-      border-color: var(--color-indigo-500);
+      border-color: var(--color-sky-500);
     }
   }
   @media (prefers-color-scheme: dark) {
     &:checked {
-      background-color: var(--color-indigo-500);
+      background-color: var(--color-sky-500);
     }
   }
   @media (prefers-color-scheme: dark) {
     &:indeterminate {
-      border-color: var(--color-indigo-500);
+      border-color: var(--color-sky-500);
     }
   }
   @media (prefers-color-scheme: dark) {
     &:indeterminate {
-      background-color: var(--color-indigo-500);
+      background-color: var(--color-sky-500);
     }
   }
   @media (prefers-color-scheme: dark) {
     &:focus-visible {
-      outline-color: var(--color-indigo-500);
+      outline-color: var(--color-sky-500);
     }
   }
   @media (forced-colors: active) {
@@ -3568,7 +3568,7 @@
   width: 100%;
   justify-content: center;
   border-radius: var(--radius-md);
-  background-color: var(--color-indigo-600);
+  background-color: var(--color-sky-600);
   padding-inline: calc(var(--spacing) * 3);
   padding-block: calc(var(--spacing) * 1.5);
   font-size: var(--text-sm);
@@ -3580,7 +3580,7 @@
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   &:hover {
     @media (hover: hover) {
-      background-color: var(--color-indigo-500);
+      background-color: var(--color-sky-500);
     }
   }
   &:focus-visible {
@@ -3591,10 +3591,10 @@
     outline-offset: 2px;
   }
   &:focus-visible {
-    outline-color: var(--color-indigo-600);
+    outline-color: var(--color-sky-600);
   }
   @media (prefers-color-scheme: dark) {
-    background-color: var(--color-indigo-500);
+    background-color: var(--color-sky-500);
   }
   @media (prefers-color-scheme: dark) {
     --tw-shadow: 0 0 #0000;
@@ -3603,13 +3603,33 @@
   @media (prefers-color-scheme: dark) {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-indigo-400);
+        background-color: var(--color-sky-400);
       }
     }
   }
   @media (prefers-color-scheme: dark) {
     &:focus-visible {
-      outline-color: var(--color-indigo-500);
+      outline-color: var(--color-sky-500);
+    }
+  }
+}
+.anchorlink {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-sky-600);
+  &:hover {
+    @media (hover: hover) {
+      color: var(--color-sky-500);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-sky-400);
+  }
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-sky-300);
+      }
     }
   }
 }

@@ -2,6 +2,7 @@
     <!--Start login.html Head Section-->
     <head>
         <link rel="stylesheet" href="{{ url_for('static', filename= 'css/ssldeploy.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename= 'brand/ssldeploy-favicon.svg') }}" type="image/svg+xml">
         {% if brand %}
         <title>{{ brand.brandname }} {{ title }} | SSL Deploy</title>
         {% else %}
