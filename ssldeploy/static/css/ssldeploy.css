@@ -2259,6 +2259,9 @@
   .text-indigo-600 {
     color: var(--color-indigo-600);
   }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -3362,6 +3365,7 @@
   }
 }
 .loginformfieldemail {
+  margin-bottom: calc(var(--spacing) * 2);
   display: block;
   width: 100%;
   border-radius: var(--radius-md);
@@ -3419,6 +3423,7 @@
   }
 }
 .loginformfieldpassword {
+  margin-bottom: calc(var(--spacing) * 2);
   display: block;
   width: 100%;
   border-radius: var(--radius-md);
