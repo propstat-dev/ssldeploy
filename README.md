@@ -23,7 +23,7 @@ A flask based web interface to deploy let's encrypt certificates to various serv
 2. Activate venv with `source venv/bin/activate`.
 3. Define the python.py as `FLASK_APP by export FLASK_APP=ssldeploy.py`.
 4. `flask run` will run on your localhost at the default python port (usually http://127.0.0.1:5000/).
-5. If you have made modifications to css and templates run `./tools/tailwind/tailwindcss-macos-arm64-v430 -i ./tools/tailwind/input.css -o ./static/css/ssldeploy.css --watch`
+5. If you have made modifications to css and templates run `./tools/tailwind/tailwindcss-macos-arm64-v430 -i ./tools/tailwind/input.css -o ./static/css/ssldeploy.css --watch` or your O/S equivalent.
 
 ## Why is this better than the alternatives?
 
