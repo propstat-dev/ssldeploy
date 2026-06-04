@@ -2,7 +2,7 @@
 A flask based web interface to deploy let's encrypt certificates to various services without compromising domain management credentials.
 
 ## Introduction
-**Let's encrypt** and **certbot** have dramatically improved the availability of certificates. Unfortunately, DNS authentication is today one of he leading means of distributing the certificates, frequently at the expense of a good security strategy. **ssldeploy** allows you to centralize the DNS authentication, certificate creation and deployment of your SSL certificates in a safe part of your network, distant from the edge. 
+**Let's encrypt** and **certbot** have dramatically improved the availability of certificates. Unfortunately, DNS authentication is today one of he leading means of distributing the certificates, frequently at the expense of a good security strategy. **ssldeploy** allows you to centralize the DNS authentication, certificate creation and deployment of your SSL certificates in a safe part of your network, distant from the edge. To keep the package simple, easy to backup and portable SQLlite was chosen given that even if used for 1000s of servers, the effective processing and I/O effort is negligible. 
 
 ## Features
 1. Certificate creation via Certbot and Certbot DNS
