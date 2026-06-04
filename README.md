@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This app is under active development and not considered stable as of today.
+
 # ssldeploy
 A flask based web interface to deploy let's encrypt certificates to various services without compromising domain management credentials.
 
@@ -10,6 +13,12 @@ A flask based web interface to deploy let's encrypt certificates to various serv
 3. Certificate Check on target
 4. Self Servicing and Approval Processes for Certificates
 5. Single Sign-On Supported for Google and Microsoft with Group Level Privilege Assignment
+
+## Limitations
+
+### Let's Encrypt Rate Limitations
+Let's Encrypt limit certificates in multiple ways. The most important one is a limit of [50 certificates per domain](https://letsencrypt.org/docs/rate-limits/).
+To request an increase of rate limits [visit this link](https://isrg.formstack.com/forms/rate_limit_adjustment_request).
 
 ## How do I run this
 
