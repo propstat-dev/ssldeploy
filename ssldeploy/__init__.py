@@ -4,8 +4,21 @@ import threading
 from flask import Flask
 from config import Config
 
+# 1. Detect if we are running via `flask run`
+def is_flask_dev():
+    return os.environ.get("FLASK_RUN_FROM_CLI") == "true"
+
+# 2. FORCE Debug mode always when using `flask run`
+# Environment variables require strings, so we use the string "true"
+if is_flask_dev():
+    os.environ["FLASK_DEBUG"] = "true"
+
 ssldeploy = Flask(__name__)
 ssldeploy.config.from_object(Config)
+
+# Flask configuration dicts require Python booleans, so we use True
+if is_flask_dev():
+    ssldeploy.config["DEBUG"] = True
 
 def run_tailwind():
     subprocess.run([
@@ -15,27 +28,23 @@ def run_tailwind():
         "--watch"
     ])
 
-def is_flask_dev():
-    return os.environ.get("FLASK_RUN_FROM_CLI") == "true"
-
 def start_tailwind_if_dev():
     if is_flask_dev():
-        # Only run once (avoid reloader duplication)
+        # Werkzeug sets this to the string "true" when the main reloader process boots
         if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
             t = threading.Thread(target=run_tailwind)
             t.daemon = True
             t.start()
 
-# 🔥 Force debug mode if using `flask run`
-if is_flask_dev():
-    ssldeploy.config["DEBUG"] = True
-
+# Start Tailwind (guarded to only run during `flask run` + main reloader thread)
 start_tailwind_if_dev()
 
-if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
-    if is_flask_dev():
+# Clean logging blocks
+if is_flask_dev():
+    if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
         ssldeploy.logger.info("⚡ Dev mode: Tailwind + Flask debug enabled")
-    else:
-        ssldeploy.logger.info("🚀 Production mode: Gunicorn expected")
+else:
+    # Gunicorn ignores WERKZEUG_RUN_MAIN and lands safely here
+    ssldeploy.logger.info("🚀 Production mode: Gunicorn active (Tailwind disabled)")
 
 from ssldeploy import routes
