@@ -29,8 +29,9 @@
             <div class="mt-10">
                 <div>
                 <form action="" method="POST" class="space-y-6" novalidate>
+                    <!--CSRF Token-->
                     {{ form.hidden_tag() }}
-
+                    <!--END CSRF Token-->
                     <div>
                     <label for="email" class="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">{{ form.user_login_email.label }}</label>
                     <div class="mt-2">
