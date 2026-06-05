@@ -3,6 +3,7 @@
 This software contains several components that are licensed at different terms than the software itself, please find below a list of all components used. 
 
 ## Summary Table of Python Packages Used
+
 | **Name**          | **Version** | **License**                |
 |-------------------|-------------|----------------------------|
 | Authlib           | 1.7.2       | BSD License                |
@@ -31,6 +32,9 @@ This software contains several components that are licensed at different terms t
 
 # Visual Arts
 Where not indicated otherwise, the images have been created synthetically and released without any rights reserved.
+
+# SSL Deploy Brand and Logos
+All rights are reserved. 
 
 # Full Licenses Including Non-Python Components
 
@@ -235,7 +239,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Tailwind Plus
 
 ### Components
-Several prefabricated Tailwind components have been used, those components have restrictions on redistribution in commercial form. If you plan to use this app for commercial scope, please reach out to us as we bundle the commercial license with the needed Tailwind Plus license. 
+Several protected Tailwind components have been used to enhance the user experience, those components have restrictions on redistribution in commercial form. If you plan to use this app for commercial scope, please reach out to us as we bundle the commercial license with the needed Tailwind Plus license. 
 
 ### Tailwind Plus License 
 
