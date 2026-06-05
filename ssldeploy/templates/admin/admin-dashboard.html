@@ -1,0 +1,173 @@
+{% extends "admin.html" %}
+    {% block adminDashboard %}
+    <div class="bg-gray-100">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 pb-6">
+  <h3 class="text-base font-semibold text-gray-900 dark:text-white">Last 30 days</h3>
+
+  <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow-sm sm:px-6 sm:pt-6 dark:bg-gray-800/75 dark:inset-ring dark:inset-ring-white/10">
+      <dt>
+        <div class="absolute rounded-md bg-sky-500 p-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-6 text-white"><use xlink:href="{{ url_for('static', filename= 'icons/icon-domains.svg') }}"></use></svg>
+        </div>
+        <p class="ml-16 truncate text-sm font-medium text-gray-500 dark:text-gray-400">Total Domains</p>
+      </dt>
+      <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white">1</p>
+        <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600 dark:text-green-400">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 self-center text-green-500 dark:text-green-400">
+            <path d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0 1 10 17Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          <span class="sr-only"> Increased by </span>
+          1
+        </p>
+        <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6 dark:bg-gray-700/20">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300">View all<span class="sr-only"> Total Domains stats</span></a>
+          </div>
+        </div>
+      </dd>
+    </div>
+    <div class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow-sm sm:px-6 sm:pt-6 dark:bg-gray-800/75 dark:inset-ring dark:inset-ring-white/10">
+      <dt>
+        <div class="absolute rounded-md bg-sky-500 p-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-6 text-white"><use xlink:href="{{ url_for('static', filename= 'icons/icon-certificates.svg') }}"></use></svg>
+        </div>
+        <p class="ml-16 truncate text-sm font-medium text-gray-500 dark:text-gray-400">Stored Certificates</p>
+      </dt>
+      <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white">1</p>
+        <p class="ml-2 flex items-baseline text-sm font-semibold text-green-600 dark:text-green-600">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 self-center text-green-500 dark:text-green-400"><use xlink:href="{{ url_for('static', filename= 'icons/icon-arrow-up.svg') }}"></use></svg>
+          <span class="sr-only"> Increased by </span>
+          1
+        </p>
+        <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6 dark:bg-gray-700/20">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300">View all<span class="sr-only"> Total Certificates stats</span></a>
+          </div>
+        </div>
+      </dd>
+    </div>
+    <div class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow-sm sm:px-6 sm:pt-6 dark:bg-gray-800/75 dark:inset-ring dark:inset-ring-white/10">
+      <dt>
+        <div class="absolute rounded-md bg-sky-500 p-3">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-6 text-white"><use xlink:href="{{ url_for('static', filename= 'icons/icon-deployedcertificates.svg') }}"></use></svg>
+        </div>
+        <p class="ml-16 truncate text-sm font-medium text-gray-500 dark:text-gray-400">Total Deployments</p>
+      </dt>
+      <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white">24.57%</p>
+        <p class="ml-2 flex items-baseline text-sm font-semibold text-red-600 dark:text-red-400">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 self-center text-red-500 dark:text-red-400">
+            <path d="M10 3a.75.75 0 0 1 .75.75v10.638l3.96-4.158a.75.75 0 1 1 1.08 1.04l-5.25 5.5a.75.75 0 0 1-1.08 0l-5.25-5.5a.75.75 0 1 1 1.08-1.04l3.96 4.158V3.75A.75.75 0 0 1 10 3Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          <span class="sr-only"> Increased by </span>
+          ∞
+        </p>
+        <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6 dark:bg-gray-700/20">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300">View all<span class="sr-only"> Total Deployments stats</span></a>
+          </div>
+        </div>
+      </dd>
+    </div>
+        <div class="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow-sm sm:px-6 sm:pt-6 dark:bg-gray-800/75 dark:inset-ring dark:inset-ring-white/10">
+      <dt>
+        <div class="absolute rounded-md bg-red-500 p-3">
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-6 text-white"><use xlink:href="{{ url_for('static', filename= 'icons/icon-errors.svg') }}"></use></svg>
+        </div>
+        <p class="ml-16 truncate text-sm font-medium text-gray-500 dark:text-gray-400">Total Errors</p>
+      </dt>
+      <dd class="ml-16 flex items-baseline pb-6 sm:pb-7">
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white">0%</p>
+        <p class="ml-2 flex items-baseline text-sm font-semibold text-gray-600 dark:text-gray-400">
+          <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-5 shrink-0 self-center text-green-500 dark:text-green-400">
+            <path d="M10 3a.75.75 0 0 1 .75.75v10.638l3.96-4.158a.75.75 0 1 1 1.08 1.04l-5.25 5.5a.75.75 0 0 1-1.08 0l-5.25-5.5a.75.75 0 1 1 1.08-1.04l3.96 4.158V3.75A.75.75 0 0 1 10 3Z" clip-rule="evenodd" fill-rule="evenodd" />
+          </svg>
+          <span class="sr-only"> Decreased by </span>
+          N/A
+        </p>
+        <div class="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6 dark:bg-gray-700/20">
+          <div class="text-sm">
+            <a href="#" class="font-medium text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300">View all<span class="sr-only"> Total Deployments stats</span></a>
+          </div>
+        </div>
+      </dd>
+    </div>
+  </dl>
+<div class="px-4 lg:px-0 mt-5">
+  <div class="sm:flex sm:items-center">
+    <div class="sm:flex-auto">
+      <h1 class="text-base font-semibold text-gray-900 dark:text-white">Logs</h1>
+      <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">Review Certificate Requests, Renewals and Deployments</p>
+    </div>
+    <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+      <button type="button" class="block rounded-md bg-sky-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-sky-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 dark:bg-sky-500 dark:hover:bg-sky-400 dark:focus-visible:outline-sky-500">Add user</button>
+    </div>
+  </div>
+  <div class="mt-8 flow-root">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <div class="overflow-hidden shadow-sm outline-1 outline-black/5 sm:rounded-lg dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+          <table class="relative min-w-full divide-y divide-gray-300 dark:divide-white/15">
+            <thead class="bg-gray-50 dark:bg-gray-800/75">
+              <tr>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">Timestamp</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">ID</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">Type</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">FQDN</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">Server</th>
+                <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-200">Status</th>
+                <th scope="col" class="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-gray-200">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white dark:divide-white/10 dark:bg-gray-800/50">
+              <tr>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">Friday, 05-Jun-26 16:40:05 UTC</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">f3rfsfkl32233</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">Certificate Request</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">mail.propstat.org</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">N/A</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400"><span class="inline-flex items-center rounded-md bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700 dark:bg-green-400/10 dark:text-green-400">OK</span></td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+  <div class="flex items-center gap-2">
+    <svg viewBox="0 0 15 15" fill="currentColor" class="anchorlink">
+      <use xlink:href="{{ url_for('static', filename='icons/icon-detailview.svg') }}"></use>
+    </svg>
+    <svg viewBox="0 0 15 15" fill="currentColor" class="anchorlink">
+      <use xlink:href="{{ url_for('static', filename='icons/icon-domains.svg') }}"></use>
+    </svg>
+  </div>
+</td>
+              </tr>
+              <tr>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">Friday, 05-Jun-26 16:55:05 UTC</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">f3rfsfkl32234</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">Certificate Deployment</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">mail.propstat.org</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">mail-1.propstat.org</td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400"><span class="inline-flex items-center rounded-md bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700 dark:bg-green-400/10 dark:text-green-400">OK</span></td>
+                <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500 dark:text-gray-400">
+  <div class="flex items-center gap-2">
+    <svg viewBox="0 0 15 15" fill="currentColor" class="anchorlink">
+      <use xlink:href="{{ url_for('static', filename='icons/icon-detailview.svg') }}"></use>
+    </svg>
+    <svg viewBox="0 0 15 15" fill="currentColor" class="anchorlink">
+      <use xlink:href="{{ url_for('static', filename='icons/icon-domains.svg') }}"></use>
+    </svg>
+  </div>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+        </div>
+    {% endblock %}
