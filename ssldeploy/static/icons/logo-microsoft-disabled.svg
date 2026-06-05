@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 24 24" fill="currentColor" aria-hidden="true" class="size-5 fill-[#24292F] dark:fill-white">
+  <path fill="#f3f3f3" d="M 43.393 21.301 L 43.393 -1.699 L 43.393 21.301 Z" style="stroke-width: 1;"/>
+  <g transform="matrix(1, 0, 0, 1, 0, -0.058)">
+    <path fill="#d1d5dc" d="M -0.026 0.058 L 9.497 0.058 L 9.497 9.345 L -0.026 9.345 L -0.026 0.058 Z" style="stroke-width: 1; opacity: 0.9;"/>
+    <path fill="#d1d5dc" d="M 10.451 0.058 L 19.974 0.058 L 19.974 9.345 L 10.451 9.345 L 10.451 0.058 Z" style="stroke-width: 1; opacity: 0.9;"/>
+    <path fill="#d1d5dc" d="M -0.026 10.271 L 9.497 10.271 L 9.497 19.558 L -0.026 19.558 L -0.026 10.271 Z" style="stroke-width: 1; opacity: 0.9;"/>
+    <path fill="#d1d5dc" d="M 10.451 10.271 L 19.974 10.271 L 19.974 19.558 L 10.451 19.558 L 10.451 10.271 Z" style="stroke-width: 1; opacity: 0.9;"/>
+  </g>
+</svg>
