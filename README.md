@@ -2,7 +2,7 @@
 > This app is under active development and not considered stable as of today.
 
 # ssldeploy
-![Screenshot of SSL Deploy Admin Dashboard](documentation/screenshots/admin-dashboard.png)
+![Screenshot of SSL Deploy Admin Dashboard](/documentation/screenshots/admin-dashboard.png)
 A flask based web interface to deploy let's encrypt certificates to various services without compromising domain management credentials.
 
 ## Introduction
