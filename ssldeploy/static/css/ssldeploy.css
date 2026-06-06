@@ -1796,9 +1796,6 @@
   .border-gray-300 {
     border-color: var(--color-gray-300);
   }
-  .border-sky-200 {
-    border-color: var(--color-sky-200);
-  }
   .border-sky-600 {
     border-color: var(--color-sky-600);
   }
@@ -2521,9 +2518,6 @@
   .text-red-600 {
     color: var(--color-red-600);
   }
-  .text-sky-500 {
-    color: var(--color-sky-500);
-  }
   .text-sky-600 {
     color: var(--color-sky-600);
   }
@@ -2842,10 +2836,6 @@
     --tw-duration: 100ms;
     transition-duration: 100ms;
   }
-  .duration-200 {
-    --tw-duration: 200ms;
-    transition-duration: 200ms;
-  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
@@ -3135,20 +3125,6 @@
       }
     }
   }
-  .hover\:border-sky-400 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: var(--color-sky-400);
-      }
-    }
-  }
-  .hover\:border-sky-600 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: var(--color-sky-600);
-      }
-    }
-  }
   .hover\:bg-\[\#f3d5a3\] {
     &:hover {
       @media (hover: hover) {
@@ -3170,24 +3146,10 @@
       }
     }
   }
-  .hover\:bg-sky-50 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-sky-50);
-      }
-    }
-  }
   .hover\:bg-sky-500 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-sky-500);
-      }
-    }
-  }
-  .hover\:bg-sky-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-sky-600);
       }
     }
   }
