@@ -3,6 +3,8 @@ import subprocess
 import threading
 from flask import Flask
 from config import Config
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
 # 1. Detect if we are running via `flask run`
 def is_flask_dev():
@@ -15,6 +17,10 @@ if is_flask_dev():
 
 ssldeploy = Flask(__name__)
 ssldeploy.config.from_object(Config)
+
+# Initialize database and migration objects after app is created
+db = SQLAlchemy(ssldeploy)
+migrate = Migrate(ssldeploy, db)
 
 # Flask configuration dicts require Python booleans, so we use True
 if is_flask_dev():
