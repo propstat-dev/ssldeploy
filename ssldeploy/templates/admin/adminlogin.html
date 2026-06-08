@@ -37,6 +37,11 @@
                     <div class="mt-2">
                         {{ form.admin_login_username(size=32, class_="loginformfieldusername") }}
                     </div>
+                    {% for error in form.admin_login_username.errors %}
+                        <p class="text-red-500 text-xs italic">Please insert a valid username for the chosen realm.</p>
+                    {% else %}
+                        <p class="text-gray-500 text-xs italic">Use your full company email.</p>
+                    {% endfor %}
                     </div>
 
                     <div>
@@ -44,6 +49,11 @@
                     <div class="mt-2">
                         {{ form.admin_login_password(size=32, class_="loginformfieldpassword") }}
                     </div>
+                    {% for error in form.admin_login_password.errors %}
+                        <p class="text-red-500 text-xs italic">Please insert a valid password.</p>
+                    {% else %}
+                        <p class="text-gray-500 text-xs italic">Use your full company email.</p>
+                    {% endfor %}
                     </div>
                     <div>
                     <label for="{{ form.admin_login_realm.id }}" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Realm</label>
