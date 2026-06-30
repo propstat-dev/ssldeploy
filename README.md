@@ -43,7 +43,7 @@ If you have made modifications to css and templates run `./tools/tailwind/tailwi
 MacOS does have the nasty habbit to reject unsigned packages, as @tailwindlabs does not sign the package, you might have to move it out of quarantine. MacOS will report the file as "damaged" asking you to delete it. 
 Issue #9 describes the issue at extend.
 
-![Screenshot of SSL Deploy Admin Dashboard](/documentation/screenshots/knownissues-error-tailwindcli-macos.png  width="30%" height="200")
+![Error when launching tailwind-cli on macOS](/documentation/screenshots/knownissues-error-tailwindcli-macos.png)
 
 ```bash
 cd ./tools/tailwind/tailwind-macos-*-v*** # Replace * with your architecture and version
