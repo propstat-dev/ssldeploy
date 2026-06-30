@@ -18,7 +18,6 @@ class AdminLoginForm(FlaskForm):
     admin_login_realm_options = [
         ("pam", "Linux PAM Standard Authentication"),
         ("ldap", "LDAP"),
-        ("ad", "Active Directory"),
     ]
     admin_login_realms_enabled = {"pam"}  # only PAM is allowed for now, but this can be easily extended in the future
 
@@ -30,6 +29,6 @@ class AdminLoginForm(FlaskForm):
 
     admin_login_submit = SubmitField('Sign In')
 
-    def validate_admin_realm(self, field):
+    def validate_admin_login_realm(self, field):
         if field.data not in self.admin_login_realms_enabled:
             raise ValidationError("Selected authentication method is not enabled.")
