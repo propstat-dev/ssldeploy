@@ -60,3 +60,14 @@ chmod +x tailwind-macos-*-v*** # Replace * with your architecture and version
 DNS authentication credentials, target system credentials and certificates are not available on the front-end. While you can create, update and delete credentials, viewing them remains impossible in lack of endpoints. 
 
 ## Supported DNS creation
+
+
+# License 
+
+## SSL Deploy
+This software is covered by a source available license, commercial use requires you to contact us to discuss a commercial license. 
+
+## UI / UX
+We have made extensive use of Tailwind Plus components. Any commercial use requires you to purchase a proper Tailwind license. 
+The full license and restrictions we adhere to can be found in the full [Tailwind License](https://tailwindcss.com/plus/license).
+More information about purchasing Tailwind can be found on the [Tailwind website](https://tailwindcss.com/plus#pricing).

@@ -225,7 +225,7 @@ SOFTWARE.
 2. (Tailwind CSS Cli)[https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.3.0]
 3. (Hero Icons)[https://github.com/tailwindlabs/heroicons]
 
-### License for Tailwind Components
+### License for Tailwind CSS, Tailwind-CLI and Hero Icons
 MIT License
 
 Copyright (c) Tailwind Labs, Inc.
