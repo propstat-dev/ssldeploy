@@ -22,6 +22,6 @@ def admin():
         return redirect('/')
     return render_template('admin/adminlogin.html', title='SSL Deploy Admin Interface', brand=brand, form=form)
 
-@ssldeploy.route('/admin/dashboard')
+@ssldeploy.route('/admin/dashboard/')
 def admin_dashboard():
     return render_template('admin/admin-dashboard.html', title='SSL Deploy Admin Dashboard')
