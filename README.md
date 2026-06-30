@@ -36,6 +36,18 @@ To request an increase of rate limits [visit this link](https://isrg.formstack.c
 
 If you have made modifications to css and templates run `./tools/tailwind/tailwindcss-macos-arm64-v430 -i ./tools/tailwind/input.css -o ./static/css/ssldeploy.css --watch` or your O/S equivalent.
 
+### Known Issues
+
+#### Tailwind Cli on MacOS 
+MacOS does have the nasty habbit to reject unsigned packages, as @tailwindlabs does not sign the package, you might have to move it out of quarantine. MacOS will report the file as "damaged" asking you to delete it. 
+
+```bash
+cd ./tools/tailwind/tailwind-macos-*-v*** # Replace * with your architecture and version
+xattr -l tailwind-macos-*-v*** # Replace * with your architecture and version
+xattr -d com.apple.quarantine tailwind-macos-*-v*** # Replace * with your architecture and version
+chmod +x tailwind-macos-*-v*** # Replace * with your architecture and version
+./tailwindcss-macos-arm64 --help # Test if you can run the file without errors now. 
+```
 
 ## Why is this better than the alternatives?
 
