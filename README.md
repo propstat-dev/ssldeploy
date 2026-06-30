@@ -1,8 +1,9 @@
 > [!CAUTION]
 > This app is under active development and not considered stable as of today.
+> We aim for support for Ubuntu Server, RHEL AND SUSE.
 
 # ssldeploy
-![Screenshot of SSL Deploy Admin Dashboard](/documentation/screenshots/admin-dashboard.png)
+![Screenshot of SSL Deploy Admin Dashboard](/documentation/screenshots/screenshot-admin-dashboard.png)
 A flask based web interface to deploy let's encrypt certificates to various services without compromising domain management credentials.
 
 ## Introduction
@@ -40,6 +41,9 @@ If you have made modifications to css and templates run `./tools/tailwind/tailwi
 
 #### Tailwind Cli on MacOS 
 MacOS does have the nasty habbit to reject unsigned packages, as @tailwindlabs does not sign the package, you might have to move it out of quarantine. MacOS will report the file as "damaged" asking you to delete it. 
+Issue #9 describes the issue at extend.
+
+![Screenshot of SSL Deploy Admin Dashboard](/documentation/screenshots/knownissues-error-tailwindcli-macos.png  width="30%" height="200")
 
 ```bash
 cd ./tools/tailwind/tailwind-macos-*-v*** # Replace * with your architecture and version
@@ -56,5 +60,3 @@ chmod +x tailwind-macos-*-v*** # Replace * with your architecture and version
 DNS authentication credentials, target system credentials and certificates are not available on the front-end. While you can create, update and delete credentials, viewing them remains impossible in lack of endpoints. 
 
 ## Supported DNS creation
-
-
