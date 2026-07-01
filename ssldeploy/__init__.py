@@ -128,4 +128,4 @@ else:
     # Gunicorn ignores WERKZEUG_RUN_MAIN and lands safely here
     ssldeploy.logger.info("🚀 Production mode: Gunicorn active (Tailwind disabled)")
 
-from ssldeploy import routes
+from ssldeploy import routes, models
